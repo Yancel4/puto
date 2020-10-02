@@ -1,5 +1,5 @@
 
-        <meta charset="utf-8">
+/*         <meta charset="utf-8">
         @import url('https://fonts.googleapis.com/css?family=Poppings:200,300,400,500,600,700,800,900&display=swap')*
     *
    {
@@ -64,4 +64,143 @@
                 opacity: 0;
             }
         }
+     */
+@import url(https://fonts.googleapis.com/css?family=Redressed);
+.hidden{
+    overflow: hidden;
+}
+section{
+    padding: 50px;
+}
+section h1{
+    font-size: 2.5em;
+}
+section p{
+    font-size: 1.2em;
+    color: #fff;
+}
+::-webkit-scrollbal{
+    width: 0;
+}
+#scrollPath{
+    position: fixed;
+    top: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255,255,255,0.05);
+}
+#progressbar{
+    position: fixed;
+    top: 0;
+    width: 10px;
+    background: linear-gradient(to top, #008aff,#00ffe7);
+    animation: animate 5s linear infinite;
+}
+@keyframes animate
+{
+0%,100%{
+   filter: hue-rotate(0deg); 
+  } 
+  50%{
+   filter: hue-rotate(0deg); 
+  } 
+}
+#progressbar:before
+{
+    content:'';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(10px);
+}
+#progressbar:after
+{
+    content:'';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(30px);
+}
+
+.loader{
+    height: 100vh;
+}
+.eye {
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  background-color: #640606;
+  position: absolute;
+  border: 5px solid #000000;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+.sharingan {
+  position: absolute;
+  animation:loader 3s infinite linear;
+}
+#pupil {
+  fill: black;
+  transform: scale(1);
+		/*opacity: 8;*/
+		transform-origin: 50% 50%;
+		animation: pulse 3s cubic-bezier(.5,.5,0,1) infinite;
+}
+#iris {
+  stroke-width: 8px;
+  stroke: rgba(60, 6, 6, 0.75);
+  fill: rgba(60, 6, 6, 0.9);
+}
+.iris_anomaly {
+  fill: black;
+  font-size: 100px;
+  font-family: "Redressed", cursive;
+}
+@keyframes pulse {
+	
+	0% {
+		opacity: 4.4;
+	}
+	20% {
+		opacity: 6.4;
+	}
+	50% {
+		opacity: 8.4;
+		transform: scale(1.4);
+	}
+	100% {
+		transform: scale(2);
+	}
+	
+}
     
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+   
+  }
+  50%{
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform:rotate(120deg);
+    } 
+}
+/* --------- kindly ignore ---------*/
+body {
+   /*background-color: #eaeafa;*/
+   background-color: #102626;
+}
+
+h1, p {
+  /*width: 100%;*/
+  text-align: center;
+  font-family: "Redressed", cursive;
+  color:#fff;
+}
